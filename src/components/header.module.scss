@@ -1,0 +1,93 @@
+.header {
+  margin: 0.8rem auto;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #efefef;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.main_nav {
+  margin-top: 1.5rem;
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.item {
+  margin: 0 0.5rem;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.toggleButton {
+  width: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle;
+  display: none;
+  margin-top: 1rem;
+}
+
+.toggleButton:focus {
+  outline: none;
+}
+
+.toggleButton__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: rgba(5, 5, 5, 0.445);
+  display: block;
+  margin: 0.6rem 0;
+}
+
+.mobileNav {
+  margin-top: 0.8rem;
+  border-top: 1px solid #efefef;
+  padding-top: 1.5rem;
+}
+
+.mobileItems {
+  list-style: none;
+}
+
+.mobileItem {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  line-height: 20px;
+}
+
+@media (max-width: 40rem) {
+  .main_nav {
+    display: none;
+  }
+
+  .toggleButton {
+    display: block;
+  }
+}
+
+@media (min-width: 40rem) {
+  .mobileNav {
+    display: none;
+  }
+}

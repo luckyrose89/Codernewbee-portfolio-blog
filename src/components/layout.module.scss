@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.container {
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  max-width: 750px;
+  margin-right: auto;
+  margin-left: auto;
+}
