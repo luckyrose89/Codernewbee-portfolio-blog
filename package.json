@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -16,6 +16,7 @@
   "dependencies": {
     "gatsby": "^2.19.5",
     "gatsby-plugin-sass": "^2.1.28",
+    "gatsby-source-filesystem": "^2.1.48",
     "node-sass": "^4.13.1",
     "pm": "^2.2.6",
     "react": "^16.12.0",
