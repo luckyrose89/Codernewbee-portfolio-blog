@@ -8,6 +8,7 @@ const IndexPage = () => {
       allMarkdownRemark {
         edges {
           node {
+            id
             frontmatter {
               title
               date
@@ -25,12 +26,12 @@ const IndexPage = () => {
       <ol>
         {data.allMarkdownRemark.edges.map(edge => {
           return (
-            <Link to={edge.node.fields.slug}>
-              <li key={edge.id}>
+            <li key={edge.node.id}>
+              <Link to={edge.node.fields.slug}>
                 <h2>{edge.node.frontmatter.title}</h2>
                 <p>{edge.node.frontmatter.date}</p>
-              </li>
-            </Link>
+              </Link>
+            </li>
           )
         })}
       </ol>
