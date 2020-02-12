@@ -1,9 +1,12 @@
 ---
 title: "The React tutorial"
 date: "2020-02-06"
+featuredImage: "./blogpic.png"
 ---
 
 This post helps you make your first react app.
+
+![Coding](./blogpic.png)
 
 ## Topics Covered
 
