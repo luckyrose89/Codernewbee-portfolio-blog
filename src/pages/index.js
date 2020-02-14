@@ -4,18 +4,19 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import blogStyles from "./blog.module.scss"
+console.log(blogStyles)
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
           node {
             excerpt(pruneLength: 140)
             id
             frontmatter {
               title
-              date
+              date(formatString: "MMMM DD, YYYY")
               featuredImage {
                 childImageSharp {
                   sizes(maxWidth: 630) {
