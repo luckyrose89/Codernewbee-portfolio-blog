@@ -32,6 +32,7 @@ module.exports = {
       options: {
         plugins: [
           "gatsby-remark-relative-images",
+          "gatsby-remark-reading-time",
           {
             resolve: "gatsby-remark-images",
             options: {

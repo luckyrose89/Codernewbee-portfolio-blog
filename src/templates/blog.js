@@ -10,6 +10,11 @@ export const query = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
       }
+      fields {
+        readingTime {
+          text
+        }
+      }
       html
     }
   }
@@ -20,7 +25,10 @@ const Blog = props => {
     <Layout>
       <div className={entryStyles.container}>
         <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-        <p>{props.data.markdownRemark.frontmatter.date}</p>
+        <p>
+          {props.data.markdownRemark.frontmatter.date} /{" "}
+          {props.data.markdownRemark.fields.readingTime.text}
+        </p>
         <div
           dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
         ></div>
