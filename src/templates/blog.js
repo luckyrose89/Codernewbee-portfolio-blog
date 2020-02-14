@@ -24,8 +24,10 @@ const Blog = props => {
   return (
     <Layout>
       <div className={entryStyles.container}>
-        <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-        <p>
+        <h1 className={entryStyles.heading}>
+          {props.data.markdownRemark.frontmatter.title}
+        </h1>
+        <p className={entryStyles.heading}>
           {props.data.markdownRemark.frontmatter.date} /{" "}
           {props.data.markdownRemark.fields.readingTime.text}
         </p>
