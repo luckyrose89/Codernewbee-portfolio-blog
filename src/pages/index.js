@@ -1,42 +1,42 @@
 import React from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import blogStyles from "./blog.module.scss"
-console.log(blogStyles)
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-        edges {
-          node {
-            excerpt(pruneLength: 140)
-            id
-            frontmatter {
-              title
-              date(formatString: "MMMM DD, YYYY")
-              featuredImage {
-                childImageSharp {
-                  sizes(maxWidth: 630) {
-                    ...GatsbyImageSharpSizes
-                  }
+export const blogListQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt(pruneLength: 140)
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
                 }
               }
             }
-            fields {
-              slug
-            }
+          }
+          fields {
+            slug
           }
         }
       }
     }
-  `)
+  }
+`
+
+const IndexPage = props => {
   return (
     <Layout>
       <ol className={blogStyles.posts}>
-        {data.allMarkdownRemark.edges.map(edge => {
+        {props.data.allMarkdownRemark.edges.map(edge => {
           return (
             <li key={edge.node.id} className={blogStyles.post}>
               <div className={blogStyles.postImg}>
